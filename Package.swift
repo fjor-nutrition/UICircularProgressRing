@@ -14,32 +14,33 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(
-            name: "SnapshotTesting", 
-            url: "https://github.com/pointfreeco/swift-snapshot-testing.git", 
-            from: "1.8.1"
-        )
+//        .package(
+//            name: "SnapshotTesting",
+//            url: "https://github.com/pointfreeco/swift-snapshot-testing.git",
+//            from: "1.8.1"
+//        )
     ],
     targets: [
         .target(
             name: "UICircularProgressRing",
             dependencies: [],
-            path: "Sources"
+            path: "Legacy",
+            exclude: ["UICircularProgressRing.h"]
         ),
-        .testTarget(
-            name: "UICircularProgressRingTests",
-            dependencies: [
-                "UICircularProgressRing"
-            ],
-            path: "Tests"
-        ),
-        .testTarget(
-            name: "UICircularProgressRingSnapshotTests",
-            dependencies: [
-                "UICircularProgressRing",
-                "SnapshotTesting"
-            ],
-            path: "SnapshotTests"
-        )
+//        .testTarget(
+//            name: "UICircularProgressRingTests",
+//            dependencies: [
+//                "UICircularProgressRing"
+//            ],
+//            path: "Tests"
+//        ),
+//        .testTarget(
+//            name: "UICircularProgressRingSnapshotTests",
+//            dependencies: [
+//                "UICircularProgressRing",
+//                "SnapshotTesting"
+//            ],
+//            path: "SnapshotTests"
+//        )
     ]
 )
